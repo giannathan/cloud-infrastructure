@@ -15,8 +15,6 @@ services:
     image: wordpress
     ports:
       - 8080:80
-    env_file:
-      - .env
     environment:
       WORDPRESS_DB_HOST: db
       WORDPRESS_DB_USER: ${DB_USER}
@@ -27,8 +25,6 @@ services:
 
   db:
     image: mysql
-    env_file:
-      - .env
     environment:
       MYSQL_DATABASE: ${DB_NAME}
       MYSQL_USER: ${DB_USER}
